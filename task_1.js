@@ -4,7 +4,7 @@ const i = 100
 
 function simple_num() {
     let val = 2;
-    let z = [1];
+    const z = [1];
     while (val < i) {
         t = 1;
         let simple = true;
