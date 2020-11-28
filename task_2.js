@@ -6,32 +6,22 @@
 
 'use strict'
 
+// В данном случае "a" "b" представляют собой выбор пользователя и для удобства редактирования вынесены в отдельные переменные
+let a = { name: 'PS', cost: 47000, num: 3 }
+let b = { name: 'Xbox', cost: 46000, num: 2 }
+// Для усовершенствования необходимо дать пользователю возможность самому определять параметр "num" для каждой позиции товара в корзине
 
-// let a = { name: 'PS', cost: 47000 }
-// let b = { name: 'Xbox', cost: 46000 }
-
-let basket = [{ name: 'PS', cost: 47000 }, { name: 'Xbox', cost: 46000 }];
+let basket = [a, b];
 
 function countBasketPrice(basket) {
     const sum = []
     let a = 0
     let res = 0
     for (let i = 0; i < basket.length; i++) {
-        for (let key in basket[i]) {
-            // document.writeln(key)
-            if (key === "cost") {
-                sum.push(basket[i][key]);
-            }
-        }
-    }
-    for (let i = 0; i < sum.length; i++) {
-        a = sum[i]
+        a = (basket[i]["cost"] * basket[i]["num"])
         res = res + a
     }
-
     document.writeln(res);
 }
 
 countBasketPrice(basket)
-
-// alert(basket[0]["name"])
